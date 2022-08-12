@@ -2,13 +2,15 @@
 #define MAP
 
 #include <vector>
+
+#include "rng.hpp"
 #include "entity.hpp"
 
-enum RoomSide {
-    RoomLeft = 0,
-    RoomDown,
-    RoomRight,
-    RoomUp,
+enum Direction {
+    Left = 0,
+    Down,
+    Right,
+    Up,
 };
 
 enum RewardType {
@@ -24,7 +26,7 @@ struct Reward {
 
 class Room; // not technically cyclical reference, since its ptr->Room
 struct Door {
-    RoomSide side;
+    Direction side;
     Room* destination;
 };
 
@@ -34,12 +36,16 @@ class Room {
         std::vector<Entity> enemies;
 
         std::vector<Reward> rewards;
+
+        Room* move(Direction dir);
 };
 
 class Map {
     public:
         std::vector<Room> rooms;
         Room* currentRoom;
+
+        void move(Direction dir);
 };
 
 #endif

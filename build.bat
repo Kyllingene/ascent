@@ -1,12 +1,18 @@
 @echo off
 
-echo "[---] Building...\n\n"
+echo [---] Building...
+echo .
+echo .
 cd windows
 
 cmake ../
 cmake --build .
 
-echo "[---] Running...\n\n"
+echo .
+echo .
+echo [---] Running...
+echo .
+echo .
 Debug\ascent.exe
 
 cd ..

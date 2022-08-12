@@ -10,6 +10,8 @@
 
 class GameState {
     public:
+        GameState(Map map);
+
         std::vector<Entity> playerTeam;
         std::vector<Entity> enemyTeam;
 

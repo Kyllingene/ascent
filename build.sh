@@ -1,12 +1,12 @@
 #!/usr/bin/bash
 
-echo "[---] Building...\n\n"
+echo -e "[---] Building...\n\n"
 cd linux
 
 cmake ../
 cmake --build .
 
-echo "[---] Running...\n\n"
+echo -e "\n\n[---] Running...\n\n"
 ./ascent
 
 cd ..
