@@ -2,6 +2,8 @@
 
 echo "[---] Building...\n\n"
 cd windows
+
+cmake ../
 cmake --build .
 
 echo "[---] Running...\n\n"
